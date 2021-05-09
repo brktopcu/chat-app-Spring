@@ -44,4 +44,11 @@ public class MessageController {
 
         return new ResponseEntity<>(messageList, HttpStatus.OK);
     }
+
+    @GetMapping("/privateMessages/{user}")
+    public ResponseEntity<List<UserMessage>> getPrivateMessages(@PathVariable String user){
+        var messageList = messageService.getPrivateMessages(user);
+
+        return new ResponseEntity<>(messageList, HttpStatus.OK);
+    }
 }

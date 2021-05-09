@@ -36,4 +36,9 @@ public class MessageService {
 
         return messageRepository.findAllByMessageTo(topic);
     }
+
+    public List<UserMessage> getPrivateMessages(String topic){
+
+        return messageRepository.findAllByMessageTo(topic);
+    }
 }
