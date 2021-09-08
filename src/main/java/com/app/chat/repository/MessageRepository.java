@@ -11,4 +11,6 @@ import java.util.UUID;
 public interface MessageRepository extends JpaRepository<UserMessage, UUID> {
 
     List<UserMessage> findAllByMessageTo(String messageTo);
+
+    List<UserMessage> findAllByMessageFrom(String messageTo);
 }

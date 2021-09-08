@@ -70,6 +70,11 @@ public class MessageService {
         return messageRepository.findAllByMessageTo(topic);
     }
 
+    public List<UserMessage> getUserMessages(String username){
+
+        return messageRepository.findAllByMessageFrom(username);
+    }
+
     public List<ElasticMessage> searchMessages(String query){
 
         return eMessageRepository.findByMessageText(query);

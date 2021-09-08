@@ -52,6 +52,13 @@ public class MessageController {
         return new ResponseEntity<>(messageList, HttpStatus.OK);
     }
 
+    @GetMapping("/userMessages/{user}")
+    public ResponseEntity<List<UserMessage>> getAllUserMessages(@PathVariable String user){
+        var messageList = messageService.getUserMessages(user);
+
+        return new ResponseEntity<>(messageList, HttpStatus.OK);
+    }
+
     @GetMapping("/searchMessages/{query}")
     public ResponseEntity<List<ElasticMessage>> searchMessages(@PathVariable String query){
         var messageList = messageService.searchMessages(query);
